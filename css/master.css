@@ -28,3 +28,7 @@ main{
   height: 150px;
   background-color: #f00;
 }
+
+.painted {
+  background-color: #333;
+}
