@@ -7,6 +7,7 @@ function main() {
     drawGrid(numberOfPixelsPerSide, numberOfPixelsPerSide);
     paintPixelsOnHover();
     resetOnClickOnBtn();
+    settingsOnClickOnBtn();
 }
 
 function setPixelSizeInCss(numberOfPixelsPerSide) {
@@ -51,4 +52,14 @@ function resetCanvas() {
     for(let paintedPixel of paintedPixels) {
         paintedPixel.classList.remove('painted');
     }
+}
+
+function settingsOnClickOnBtn() {
+    let btn = document.getElementById('settings-btn');
+    btn.addEventListener('click', toggleSettings);
+}
+
+function toggleSettings() {
+    let settings = document.querySelector('#settings');
+    settings.classList.toggle('hidden');
 }

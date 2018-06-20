@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+* {box-sizing: border-box;}
 html{
   width: 100%;
   height: 100%;
@@ -8,12 +9,12 @@ html{
 body {
   display: grid;
   grid-template: 1fr 600px 1fr / 1fr 600px 1fr;
-  grid-gap: 1ex 1ex;
+  grid-gap: 13px;
   place-items: stretch;
   place-content: stretch;
   width: 100%;
   height: 100%;
-  background-color: #ccc;
+  background-color: #ddd;
 }
 
 main{
@@ -46,7 +47,7 @@ button{
   color: #eee;
   font-size: 120%;
   border: none;
-  background-color: #aaa;
+  background-color: #bbb;
   border-radius: .618ex;
   width: 2em;
   height: 2em;
@@ -71,4 +72,46 @@ button{
 #settings-btn {
   top: 0;
   right: 0;
+}
+
+aside {
+  grid-area: 2 / 3;
+  position: relative;
+}
+
+#settings {
+  position: absolute;
+  font-size: 120%;
+  bottom: calc(-2em - 13px);
+  font-family: inherit;
+  font-variant: small-caps;
+  font-weight: bold;
+  color: #eee;
+  border: none;
+  background-color: #bbb;
+  border-radius: .618ex;
+  width: 2em;
+  border-top: solid 5px #bbb;
+  border-bottom: solid 5px #bbb;
+}
+
+.stg-category {
+  width: 2em;
+  height: 2em;
+  border-style: solid;
+  border-color: #bbb;
+}
+  .stg-category:hover {
+    background-color: #ccc;
+    border-color: #ccc;
+  }
+
+.hidden {
+  display: none;
+}
+
+#stg-color{
+  background: linear-gradient(135deg, #fe0229 0%,#ffd000 33%,#c6df5f 66%,#7189bf 100%);
+  border-width: 5px;
+  /* border-radius-inner: 5px; */
 }
