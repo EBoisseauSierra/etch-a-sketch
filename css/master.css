@@ -1,0 +1,30 @@
+html{
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template: 1fr 600px 1fr / 1fr 600px 1fr;
+  grid-gap: 0 0;
+  place-items: stretch;
+  place-content: stretch;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+}
+
+main{
+  grid-area: 2 / 2;
+  background-color: #fff;
+  box-shadow: inset 0 0 5px #333;
+  line-height: 1px; /* required to make sure pixels are vertically stacked */
+}
+
+.pixel {
+  vertical-align: top;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  background-color: #f00;
+}
