@@ -5,8 +5,8 @@ function main() {
     let numberOfPixelsPerSide = 12;
     setPixelSizeInCss(numberOfPixelsPerSide)
     drawGrid(numberOfPixelsPerSide, numberOfPixelsPerSide);
-    // use propagation from pixel to canvas for listening to events
-    canvas.addEventListener('mouseover', paintPixel);
+    paintPixelsOnHover();
+    resetOnClickOnBtn();
 }
 
 function setPixelSizeInCss(numberOfPixelsPerSide) {
@@ -23,16 +23,32 @@ function setPixelSizeInCss(numberOfPixelsPerSide) {
 }
 
 function drawGrid(numberOfXsquares, numberOfYsquares) {
-    let numberOfPixels = numberOfXsquares * numberOfYsquares;
-    for (var i = 0; i < numberOfPixels; i++) {
+    for (var i = 0; i < numberOfXsquares * numberOfYsquares; i++) {
         let newPixel = document.createElement('span')
         newPixel.classList.add('pixel');
         canvas.appendChild(newPixel);
     }
 }
 
+function paintPixelsOnHover() {
+    // use propagation from pixel to canvas for listening to events
+    canvas.addEventListener('mouseover', paintPixel);
+}
+
 function paintPixel(event) {
     let pixelToPaint = event.target;
     // don't paint the canvas itself (even if it shouldn't be observable)
     if (pixelToPaint.id !== 'canvas') pixelToPaint.classList.add('painted');
+}
+
+function resetOnClickOnBtn() {
+    let btn = document.getElementById('reset-btn');
+    btn.addEventListener('click', resetCanvas);
+}
+
+function resetCanvas() {
+    let paintedPixels = document.querySelectorAll('.painted');
+    for(let paintedPixel of paintedPixels) {
+        paintedPixel.classList.remove('painted');
+    }
 }
