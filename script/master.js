@@ -2,9 +2,24 @@ window.onload = main;
 
 function main() {
     let canvas = document.getElementById('canvas');
-    drawGrid(4, 4);
-    // use propagation to listen to events
+    let numberOfPixelsPerSide = 12;
+    setPixelSizeInCss(numberOfPixelsPerSide)
+    drawGrid(numberOfPixelsPerSide, numberOfPixelsPerSide);
+    // use propagation from pixel to canvas for listening to events
     canvas.addEventListener('mouseover', paintPixel);
+}
+
+function setPixelSizeInCss(numberOfPixelsPerSide) {
+    let sizeOfPixel = 600 / numberOfPixelsPerSide;
+    // first stylesheet is reset, second is master.css
+    let fileMasterCSS = document.styleSheets[1];
+    let rulesInCSSfile = fileMasterCSS.cssRules
+    for (let cssRule of rulesInCSSfile) {
+        if (cssRule.selectorText === '.pixel') {
+            cssRule.style.setProperty('height', `${sizeOfPixel}px`),
+            cssRule.style.setProperty('width', `${sizeOfPixel}px`);
+        }
+    }
 }
 
 function drawGrid(numberOfXsquares, numberOfYsquares) {

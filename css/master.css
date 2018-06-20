@@ -24,8 +24,7 @@ main{
 .pixel {
   vertical-align: top;
   display: inline-block;
-  width: 150px;
-  height: 150px;
+  /* height and width computed in JS using setPixelSizeInCss(numberOfPixelsPerSide) */
   background-color: #f00;
 }
 
