@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 html{
   width: 100%;
   height: 100%;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 body {
   display: grid;
   grid-template: 1fr 600px 1fr / 1fr 600px 1fr;
-  grid-gap: 0 0;
+  grid-gap: 1ex 1ex;
   place-items: stretch;
   place-content: stretch;
   width: 100%;
@@ -17,7 +19,7 @@ body {
 main{
   grid-area: 2 / 2;
   background-color: #fff;
-  box-shadow: inset 0 0 5px #333;
+  box-shadow: 0 0 5px #333;
   line-height: 1px; /* required to make sure pixels are vertically stacked */
 }
 
@@ -25,9 +27,48 @@ main{
   vertical-align: top;
   display: inline-block;
   /* height and width computed in JS using setPixelSizeInCss(numberOfPixelsPerSide) */
-  background-color: #f00;
+  background-color: #fff;
 }
 
 .painted {
   background-color: #333;
+}
+
+nav{
+  grid-area: 3 / 2;
+  position: relative;
+}
+
+button{
+  font-family: inherit;
+  font-variant: small-caps;
+  font-weight: bold;
+  color: #eee;
+  font-size: 120%;
+  border: none;
+  background-color: #aaa;
+  border-radius: .618ex;
+  width: 2em;
+  height: 2em;
+  position: absolute;
+  box-shadow: 0 0 .25ex #333;
+}
+
+  button:hover{
+    background-color: #888;
+  }
+
+  button:active{
+    box-shadow: none;
+    background-color: #888;
+  }
+
+#reset-btn {
+  top: 0;
+  left: 0;
+}
+
+#settings-btn {
+  top: 0;
+  right: 0;
 }
