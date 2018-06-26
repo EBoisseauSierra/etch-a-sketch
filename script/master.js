@@ -8,10 +8,11 @@ function main() {
     paintPixelsOnHover();
     resetOnClickOnBtn();
     settingsOnClickOnBtn();
+    hideOverlayOnClick();
 }
 
 function setPixelSizeInCss(numberOfPixelsPerSide) {
-    let sizeOfPixel = 600 / numberOfPixelsPerSide;
+    let sizeOfPixel = 540 / numberOfPixelsPerSide;
     // first stylesheet is reset, second is master.css
     let fileMasterCSS = document.styleSheets[1];
     let rulesInCSSfile = fileMasterCSS.cssRules
@@ -65,13 +66,22 @@ function toggleSettings() {
 }
 
 function toggleColorSettings() {
-    console.log('foo');
     let colorSettings = document.querySelector('#stglist-color');
     colorSettings.classList.toggle('hidden');
 }
 
 function toggleSizeSettings() {
-    console.log('bar');
     let sizeSettings = document.querySelector('#stglist-size');
     sizeSettings.classList.toggle('hidden');
+}
+
+function hideOverlayOnClick() {
+    let overlay = document.querySelector('.overlay');
+    overlay.addEventListener('click', (e) => {
+        overlay.classList.toggle('hidden');
+    })
+    let main = document.querySelector('main');
+    main.addEventListener('click', () => {
+        overlay.classList.toggle('hidden');
+    })
 }

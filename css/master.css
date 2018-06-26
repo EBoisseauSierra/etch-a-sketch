@@ -8,7 +8,7 @@ html{
 
 body {
   display: grid;
-  grid-template: 1fr 600px 1fr / 1fr 600px 1fr;
+  grid-template: 1fr 540px 1fr / 1fr 540px 1fr;
   grid-gap: 13px;
   place-items: stretch;
   place-content: stretch;
@@ -22,6 +22,19 @@ main{
   background-color: #fff;
   box-shadow: 0 0 5px #333;
   line-height: 1px; /* required to make sure pixels are vertically stacked */
+}
+
+.overlay{
+  grid-area: 2 / 2;
+  background-color: #ddd;
+  opacity: .5;
+  font-weight: bolder;
+  font-size: 200%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fafafa;
 }
 
 .pixel {
