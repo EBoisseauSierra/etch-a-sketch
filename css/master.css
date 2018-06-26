@@ -115,3 +115,81 @@ aside {
   border-width: 5px;
   /* border-radius-inner: 5px; */
 }
+
+.stg-options {
+  background-color: #ccc;
+  border-top: solid 5px #ccc;
+  border-bottom: solid 5px #ccc;
+}
+
+.stg-item {
+  width: 100%;
+  text-align: center;
+  height: 1.2em;
+  line-height: 1.2em;
+}
+
+.stg-item:hover {
+  background-color: #ddd;
+}
+
+#stg-col-red{
+  color: #fe0229;
+}
+
+#stg-col-orange{
+  color: #ffa100;
+}
+
+#stg-col-yellow{
+  color: #ffd000;
+}
+
+#stg-col-green{
+  color: #c6df5f;
+}
+
+#stg-col-lblue{
+  color: #00c2b5;
+}
+
+#stg-col-dblue{
+  color: #7189bf;
+}
+
+#stg-col-black{
+  color: #333;
+}
+
+#stg-size{
+  display: grid;
+}
+
+  #stg-size > i {
+    place-self: center;
+  }
+
+#stg-size-xl{
+  font-size: 17px;
+  font-weight: 900;
+}
+
+#stg-size-l{
+  font-size: 15px;
+  font-weight: 700;
+}
+
+#stg-size-m{
+  font-size: 13px;
+  font-weight: 500;
+}
+
+#stg-size-s{
+  font-size: 11px;
+  font-weight: 300;
+}
+
+#stg-size-xs{
+  font-size: 9px;
+  font-weight: 100;
+}

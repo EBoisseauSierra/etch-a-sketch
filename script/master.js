@@ -63,3 +63,15 @@ function toggleSettings() {
     let settings = document.querySelector('#settings');
     settings.classList.toggle('hidden');
 }
+
+function toggleColorSettings() {
+    console.log('foo');
+    let colorSettings = document.querySelector('#stglist-color');
+    colorSettings.classList.toggle('hidden');
+}
+
+function toggleSizeSettings() {
+    console.log('bar');
+    let sizeSettings = document.querySelector('#stglist-size');
+    sizeSettings.classList.toggle('hidden');
+}

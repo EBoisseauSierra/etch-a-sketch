@@ -5,6 +5,7 @@
     <title>Etch-a-sketch</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   </head>
   <body>
     <main id="canvas"></main>
@@ -14,18 +15,18 @@
     </nav>
     <aside>
       <div id="settings" class="hidden">
-        <div id="stg-color" class="stg-category"></div>
-        <div id="stglist-color" class="hidden">
-          <div id='stg-col-red' class="stg-item"></div>
-          <div id='stg-col-orange' class="stg-item"></div>
-          <div id='stg-col-yellow' class="stg-item"></div>
-          <div id='stg-col-green' class="stg-item"></div>
-          <div id='stg-col-lblue' class="stg-item"></div>
-          <div id='stg-col-dblue' class="stg-item"></div>
-          <div id='stg-col-black' class="stg-item"></div>
+        <div id="stg-color" class="stg-category" onclick="toggleColorSettings()"></div>
+        <div id="stglist-color" class="stg-options hidden">
+          <div id='stg-col-red' class="stg-item fas fa-square"></div>
+          <div id='stg-col-orange' class="stg-item fas fa-square"></div>
+          <div id='stg-col-yellow' class="stg-item fas fa-square"></div>
+          <div id='stg-col-green' class="stg-item fas fa-square"></div>
+          <div id='stg-col-lblue' class="stg-item fas fa-square"></div>
+          <div id='stg-col-dblue' class="stg-item fas fa-square"></div>
+          <div id='stg-col-black' class="stg-item fas fa-square"></div>
         </div>
-        <div id="stg-size" class="stg-category">s</div>
-        <div id="stglist-size" class='hidden'>
+        <div id="stg-size" class="stg-category" onclick="toggleSizeSettings()"><i class="fas fa-expand"></i></div>
+        <div id="stglist-size" class='stg-options hidden'>
           <div id='stg-size-xl' class="stg-item">xl</div>
           <div id='stg-size-l' class="stg-item">l</div>
           <div id='stg-size-m' class="stg-item">m</div>
