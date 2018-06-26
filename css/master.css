@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 html{
   width: 100%;
   height: 100%;
@@ -125,6 +127,7 @@ aside {
 
 .hidden {
   display: none;
+  transition: all 300ms ease;
 }
 
 #stg-color{
@@ -135,8 +138,12 @@ aside {
 
 .stg-options {
   background-color: #ccc;
-  border-top: solid 5px #ccc;
-  border-bottom: solid 5px #ccc;
+  /* border-top: solid 5px #ccc;
+  border-bottom: solid 5px #ccc; */
+  padding: 5px 0;
+  box-shadow: inset  0  3px 3px -3px #333,
+              inset  0 -3px 3px -3px #333;
+
 }
 
 .stg-item {
@@ -216,4 +223,14 @@ aside {
   position: absolute;
   left: 12px;
   line-height: inherit;
+}
+#stg-triangle{
+  width: 0;
+  height: 0;
+  border-right: 8px solid #bbb;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  position: absolute;
+  bottom: 6px;
+  left: -7px;
 }
