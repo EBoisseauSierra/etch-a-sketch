@@ -170,6 +170,7 @@ aside {
   text-align: center;
   height: 1.2em;
   line-height: 1.2em;
+  color:#fff;
 }
 
 .stg-item:hover {
@@ -251,4 +252,7 @@ aside {
   position: absolute;
   bottom: 6px;
   left: -7px;
+}
+.selected-size{
+  color:#333;
 }

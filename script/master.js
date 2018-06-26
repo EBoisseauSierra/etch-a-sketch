@@ -1,17 +1,17 @@
 window.onload = main;
 
 let penColor = 'black';
+let numberOfPixelsPerSide = 12;
 
 function main() {
     let canvas = document.getElementById('canvas');
-    let numberOfPixelsPerSide = 12;
-    setPixelSizeInCss(numberOfPixelsPerSide)
-    drawGrid(numberOfPixelsPerSide, numberOfPixelsPerSide);
+    drawGrid(numberOfPixelsPerSide);
     paintPixelsOnHover();
     resetOnClickOnBtn();
     settingsOnClickOnBtn();
     hideOverlayOnClick();
     selectColorOnClick();
+    selectSizeOnClick();
 }
 
 function setPixelSizeInCss(numberOfPixelsPerSide) {
@@ -27,8 +27,10 @@ function setPixelSizeInCss(numberOfPixelsPerSide) {
     }
 }
 
-function drawGrid(numberOfXsquares, numberOfYsquares) {
-    for (var i = 0; i < numberOfXsquares * numberOfYsquares; i++) {
+function drawGrid(numberOfPixelsPerSide) {
+    resetCanvas();
+    setPixelSizeInCss(numberOfPixelsPerSide);
+    for (var i = 0; i < numberOfPixelsPerSide * numberOfPixelsPerSide; i++) {
         let newPixel = document.createElement('span')
         newPixel.classList.add('pixel');
         canvas.appendChild(newPixel);
@@ -65,9 +67,9 @@ function eraseCanvas() {
 }
 
 function resetCanvas() {
-    let paintedPixels = document.querySelectorAll('.painted');
-    for(let paintedPixel of paintedPixels) {
-        paintedPixel.classList.remove('painted');
+    let canvas = document.getElementById('canvas');
+    while (canvas.firstChild) {
+        canvas.removeChild(canvas.firstChild);
     }
 }
 
@@ -118,4 +120,20 @@ function selectColorOnClick() {
         newMark.setAttribute('class', 'fas fa-times');
         e.target.appendChild(newMark);
     })
+}
+
+function selectSizeOnClick() {
+    let sizes = document.querySelector('#stglist-size');
+    sizes.addEventListener('click', (e) => {
+        // do nothing if clicked on current size
+        if(e.target.getAttribute('data-ppside') === numberOfPixelsPerSide) return;
+        // remove previous selected size
+        let previousSize = document.querySelector('.selected-size');
+        previousSize.classList.remove('selected-size');
+        // get size
+        numberOfPixelsPerSide = e.target.getAttribute('data-ppside');
+        e.target.classList.add('selected-size');
+        drawGrid(numberOfPixelsPerSide);
+    })
+
 }
