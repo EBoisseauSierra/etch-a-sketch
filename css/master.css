@@ -10,7 +10,7 @@ html{
 
 body {
   display: grid;
-  grid-template: 1fr 540px 1fr / 1fr 540px 1fr;
+  grid-template: 2fr 540px 39px 1fr / 1fr 540px 1fr;
   grid-gap: 13px;
   place-items: stretch;
   place-content: stretch;
