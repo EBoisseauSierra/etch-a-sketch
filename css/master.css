@@ -37,6 +37,7 @@ main{
   align-items: center;
   justify-content: center;
   color: #fafafa;
+  cursor: pointer;
 }
 
 .pixel {
@@ -86,6 +87,7 @@ button{
   height: 2em;
   position: absolute;
   box-shadow: 0 0 .25ex #333;
+  cursor: pointer;
 }
 
   button:hover{
@@ -133,6 +135,7 @@ aside {
   height: 2em;
   border-style: solid;
   border-color: #bbb;
+  cursor: pointer;
 }
   .stg-category:hover {
     background-color: #ccc;
@@ -171,6 +174,7 @@ aside {
   height: 1.2em;
   line-height: 1.2em;
   color:#fff;
+  cursor: default;
 }
 
 .stg-item:hover {
