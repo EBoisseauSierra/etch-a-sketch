@@ -51,7 +51,17 @@ function paintPixel(event) {
 
 function resetOnClickOnBtn() {
     let btn = document.getElementById('reset-btn');
-    btn.addEventListener('click', resetCanvas);
+    btn.addEventListener('click', eraseCanvas);
+}
+
+function eraseCanvas() {
+    let paints = ['painted-red', 'painted-orange', 'painted-yellow', 'painted-green', 'painted-lblue', 'painted-dblue', 'painted-black'];
+    for (let i = 0, l = paints.length; i < l; i++) {
+        let paintedPixels = document.querySelectorAll(`.${paints[i]}`);
+        for(let paintedPixel of paintedPixels) {
+            paintedPixel.classList.remove(paints[i]);
+        }
+    }
 }
 
 function resetCanvas() {
