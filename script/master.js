@@ -9,6 +9,7 @@ function main() {
     resetOnClickOnBtn();
     settingsOnClickOnBtn();
     hideOverlayOnClick();
+    selectColorOnClick();
 }
 
 function setPixelSizeInCss(numberOfPixelsPerSide) {
@@ -83,5 +84,21 @@ function hideOverlayOnClick() {
     let main = document.querySelector('main');
     main.addEventListener('click', () => {
         overlay.classList.toggle('hidden');
+    })
+}
+
+function selectColorOnClick() {
+    let colors = document.querySelector('#stglist-color');
+    colors.addEventListener('click', (e) => {
+        // if one clicks on crosses, there is no target anymore
+        if(e.target.id === 'color-selector') return;
+        // remove previous mark
+        let mark = document.getElementById('color-selector');
+        mark.parentNode.removeChild(mark);
+
+        let newMark = document.createElement('div');
+        newMark.setAttribute('id', 'color-selector');
+        newMark.setAttribute('class', 'fas fa-times');
+        e.target.appendChild(newMark);
     })
 }

@@ -16,17 +16,16 @@
     </nav>
     <aside>
       <div id="settings" class="hidden">
-        <div id="stg-color" class="stg-category" onclick="toggleColorSettings()" title="Select pen color"></div>
         <div id="stglist-color" class="stg-options hidden">
-          <div id='stg-col-red' class="stg-item fas fa-square"></div>
-          <div id='stg-col-orange' class="stg-item fas fa-square"></div>
-          <div id='stg-col-yellow' class="stg-item fas fa-square"></div>
-          <div id='stg-col-green' class="stg-item fas fa-square"></div>
-          <div id='stg-col-lblue' class="stg-item fas fa-square"></div>
-          <div id='stg-col-dblue' class="stg-item fas fa-square"></div>
-          <div id='stg-col-black' class="stg-item fas fa-square"></div>
+          <div id='stg-col-red' class="stg-item"><div class="fas fa-square"></div></div>
+          <div id='stg-col-orange' class="stg-item"><div class="fas fa-square"></div></div>
+          <div id='stg-col-yellow' class="stg-item"><div class="fas fa-square"></div></div>
+          <div id='stg-col-green' class="stg-item"><div class="fas fa-square"></div></div>
+          <div id='stg-col-lblue' class="stg-item"><div class="fas fa-square"></div></div>
+          <div id='stg-col-dblue' class="stg-item"><div class="fas fa-square"></div></div>
+          <div id='stg-col-black' class="stg-item"><div class="fas fa-square"><div id="color-selector" class="fas fa-times"></div></div></div>
         </div>
-        <div id="stg-size" class="stg-category" onclick="toggleSizeSettings()"><i class="fas fa-expand" title="Select pen size"></i></div>
+        <div id="stg-color" class="stg-category" onclick="toggleColorSettings()" title="Select pen color"></div>
         <div id="stglist-size" class='stg-options hidden'>
           <div id='stg-size-xl' class="stg-item">xl</div>
           <div id='stg-size-l' class="stg-item">l</div>
@@ -34,6 +33,7 @@
           <div id='stg-size-s' class="stg-item">s</div>
           <div id='stg-size-xs' class="stg-item">xs</div>
         </div>
+        <div id="stg-size" class="stg-category" onclick="toggleSizeSettings()"><i class="fas fa-expand" title="Select pen size"></i></div>
       </div>
     </aside>
   </body>
