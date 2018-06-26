@@ -16,7 +16,7 @@ body {
   place-content: stretch;
   width: 100%;
   height: 100%;
-  background-color: #eee;
+  background-color: #f9f9f9;
 }
 
 main{
@@ -46,8 +46,26 @@ main{
   background-color: #fff;
 }
 
-.painted {
+.painted-black {
   background-color: #333;
+}
+.painted-red {
+  background-color: #fe0229;
+}
+.painted-orange {
+  background-color: #ffa100;
+}
+.painted-yellow {
+  background-color: #ffd000;
+}
+.painted-green {
+  background-color: #c6df5f;
+}
+.painted-dblue {
+  background-color: #7189bf;
+}
+.painted-lblue {
+  background-color: #00c2b5;
 }
 
 nav{

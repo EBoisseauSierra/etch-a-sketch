@@ -1,5 +1,7 @@
 window.onload = main;
 
+let penColor = 'black';
+
 function main() {
     let canvas = document.getElementById('canvas');
     let numberOfPixelsPerSide = 12;
@@ -41,7 +43,10 @@ function paintPixelsOnHover() {
 function paintPixel(event) {
     let pixelToPaint = event.target;
     // don't paint the canvas itself (even if it shouldn't be observable)
-    if (pixelToPaint.id !== 'canvas') pixelToPaint.classList.add('painted');
+    if (pixelToPaint.id !== 'canvas') {
+        pixelToPaint.classList.remove('painted-red', 'painted-orange', 'painted-yellow', 'painted-green', 'painted-lblue', 'painted-dblue', 'painted-black');
+        pixelToPaint.classList.add(`painted-${penColor}`);
+    }
 }
 
 function resetOnClickOnBtn() {
@@ -95,7 +100,9 @@ function selectColorOnClick() {
         // remove previous mark
         let mark = document.getElementById('color-selector');
         mark.parentNode.removeChild(mark);
-
+        // get color (you either click on the square or its container that possesses the data-color attribute)
+        penColor = e.target.getAttribute('data-color') ? e.target.getAttribute('data-color') : e.target.parentNode.getAttribute('data-color');
+        console.log(penColor);
         let newMark = document.createElement('div');
         newMark.setAttribute('id', 'color-selector');
         newMark.setAttribute('class', 'fas fa-times');
